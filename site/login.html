@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" class="body">
+<head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Login|MT</title>
+</head>
+<body class="body">
+    <header class="header-menu">
+        <nav class="header-nav">
+            <a class="nav-a" href="wallets.html">Wallets<img src="images/wallet2.svg" alt="Wallets icon" width="20" height="20"></a>
+            <a class="nav-a" href="users.html">Users<img src="images/users.svg" alt="Users icon" width="20" height="20"></a>
+        </nav>
+
+        <div class="user-icon-div">
+            <img class="user-icon" src="images/icon.png" alt="User icon"> 
+            <ul class="dropdown-menu">
+                <li class="dropdown-menu-li"><a href="main.html">Main</a></li>
+                <li class="dropdown-menu-li"><a href="">Login</a></li>
+                <li class="dropdown-menu-li"><a href="change.html">Change</a></li>
+                <li class="dropdown-menu-li"><a href="#">Log out</a></li>
+                <li class="dropdown-menu-li"><a href="#">Delete</a></li> 
+            </ul>             
+        </div>           
+    </header>  
+    
+    <div class="login-container">
+        <div class="form-container">
+            <h2>Login</h2>
+            <form class="form" action="">
+                <label class="label" for="login">Username:</label>
+                <input class="input" type="email" id="login" name="login" required>
+                <label class="label" for="password">Password:</label>
+                <input class="input pass" type="password" minlength="8" id="password" name="password" required>
+                <div class="button-container"> 
+                    <a class="button" href="register.html">Register</a>                 
+                    <button class="button" type="submit">Sign in</button>
+                </div>
+            </form>
+        </div>
+        <div class="image-container">
+            <img class="login-img" src="images/login_image.png" alt="Login image">
+        </div>
+    </div>
+
+    <footer class="footer">
+        <h2>&copy; 2023. All rights reserved.</h2>
+    </footer>
+</body>
+</html>
