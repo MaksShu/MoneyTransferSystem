@@ -20,23 +20,22 @@
                 <li class="dropdown-menu-li"><a href="index.html">Main</a></li>
                 <li class="dropdown-menu-li"><a href="">Login</a></li>
                 <li class="dropdown-menu-li"><a href="change.html">Change</a></li>
-                <li class="dropdown-menu-li"><a href="#">Log out</a></li>
-                <li class="dropdown-menu-li"><a href="#">Delete</a></li> 
+                <li class="dropdown-menu-li"><a id="logout-button">Log out</a></li>
+                <li class="dropdown-menu-li"><a id="delete-button">Delete</a></li> 
             </ul>             
         </div>           
     </header>  
-    
     <div class="login-container">
         <div class="form-container">
             <h2>Login</h2>
-            <form class="form" action="">
+            <form class="form" id="form">
                 <label class="label" for="login">Username:</label>
-                <input class="input" type="email" id="login" name="login" required>
+                <input id="login" class="input" type="email" id="login" name="login" value="t5@gmail.com" required>
                 <label class="label" for="password">Password:</label>
-                <input class="input pass" type="password" minlength="8" id="password" name="password" required>
-                <div class="button-container"> 
+                <input id="password" class="input pass" type="password" minlength="8" id="password" name="password" value="12345678" required>
+                <div class="button-container">
                     <a class="button" href="register.html">Register</a>                 
-                    <button class="button" type="submit">Sign in</button>
+                    <button id="login-button" class="button" type="submit">Sign in</button>
                 </div>
             </form>
         </div>
@@ -48,5 +47,9 @@
     <footer class="footer">
         <h2>&copy; 2023. All rights reserved.</h2>
     </footer>
+
+    <script src="login.js"></script>
+    <script src="logout.js"></script>
+    <script src="delete.js"></script>
 </body>
 </html>
