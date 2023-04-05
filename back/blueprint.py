@@ -6,6 +6,7 @@ from flask_jwt_extended import jwt_required, create_access_token, get_jwt_identi
 from datetime import datetime
 from datetime import timezone
 
+
 import db_utils
 from schemas import *
 from models import *
@@ -79,6 +80,16 @@ def hello_world():
 @api_blueprint.route("/user", methods=["POST"])
 def create_user():
     user_data = UserCreate().load(request.json)
+    if session.query(Users).filter_by(email=user_data['email']).first() is not None:
+        response = {
+            'error': {
+                'code': 400,
+                'type': 'VALIDATION',
+                'message': 'Email already used'
+            }
+        }
+
+        return jsonify(response), 400
     user = db_utils.create_entry(Users, **user_data)
     return jsonify(UserInfo().dump(user))
 
@@ -87,6 +98,26 @@ def create_user():
 @api_blueprint.route("/user/<int:user_id>", methods=["GET"])
 @jwt_required()
 def get_user_by_id(user_id):
+    try:
+        user = db_utils.get_entry_by_id(Users, user_id)
+    except sqlalchemy.exc.NoResultFound:
+        response = {
+            'error': {
+                'code': 404,
+                'type': 'NOT_FOUND',
+                'message': 'User not found'
+            }
+        }
+
+        return jsonify(response), 404
+
+    return jsonify(UserInfo().dump(user))
+
+
+@api_blueprint.route("/user", methods=["GET"])
+@jwt_required()
+def get_user_by_token():
+    user_id = get_jwt_identity()
     try:
         user = db_utils.get_entry_by_id(Users, user_id)
     except sqlalchemy.exc.NoResultFound:
@@ -123,6 +154,17 @@ def update_user(user_id):
         return jsonify({'error': "Access denied"}), 403
 
     user_data = UserUpdate().load(request.json)
+    user_check = session.query(Users).filter_by(email=user_data['email']).first()
+    if user_check is not None and user_check.id != user_id:
+        response = {
+            'error': {
+                'code': 400,
+                'type': 'VALIDATION',
+                'message': 'Email already used'
+            }
+        }
+
+        return jsonify(response), 400
     user_updated = db_utils.update_entry(Users, user_id, **user_data)
     return jsonify(UserInfo().dump(user_updated))
 
@@ -153,7 +195,7 @@ def delete_user():
 
 
 # checked
-@api_blueprint.route("/user/login", methods=["GET"])
+@api_blueprint.route("/user/login", methods=["POST"])
 def login_user():
     userLog = LoginUser().load(request.get_json())
     sys_user = session.query(Users).filter_by(email=userLog['email']).first()
@@ -170,7 +212,11 @@ def login_user():
     if check_password_hash(sys_user.password, userLog['password']):
         return jsonify(access_token=create_access_token(identity=sys_user.id)), 200
     else:
-        return jsonify({"Error": "Wrong password"}), 401
+        return jsonify({'error': {
+                'code': 401,
+                'type': 'UNAUTHORIZED',
+                'message': 'Wrong password'
+            }}), 401
 
 
 # checked
