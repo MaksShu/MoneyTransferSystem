@@ -5,7 +5,7 @@ function waitLoad() {
     }
 }
 
-window.onload = setTimeout(waitLoad, 100);
+window.onload += setTimeout(waitLoad, 100);
 
 const loginBtn = document.getElementById('login-button');
 
