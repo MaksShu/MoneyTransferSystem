@@ -1,0 +1,43 @@
+@import '../../mixins.scss';
+
+@media (max-width: 330px) {
+    .user-button{
+        padding: 0;
+        font-size: 9px;
+        font-weight: normal;
+        padding: 4px 8px;
+    }
+    .user{
+        width: 40%;
+        font-size: 60%;
+    }
+}
+
+@media (max-width: 900px) and (min-width: 330px) {
+    .user-button{
+        width: 70%;
+        margin-top: 5%;
+        padding: 5%;
+        font-size: 12px;
+        font-weight: normal;
+    }
+    .user{
+        width: 27%;
+        font-size: 70%;
+    }
+}
+
+@media (min-width: 1500px) and (max-width: 2040px){
+    .user-button{
+        width: 50%;
+    }
+}
+
+@media (min-width: 2040px) {
+    .user-button{
+        font-size: 200%;
+    }
+    .user{
+        width: 19%;
+    }
+}

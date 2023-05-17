@@ -1,0 +1,7 @@
+@import '../../mixins.scss';
+
+.users-container{
+    @include container;
+    background: url(../../images/users_background.svg);
+    flex-wrap: wrap;  
+}

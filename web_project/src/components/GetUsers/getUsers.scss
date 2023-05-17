@@ -1,0 +1,52 @@
+@import '../../mixins.scss';
+
+.user{
+    @include flex-items-center;
+    color:lightgreen;
+    flex-direction: column;
+    background: $green-background;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px;
+    width: 22%;
+}
+
+.user h1{
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: break-word;
+    color: $border-color;
+}
+
+.user h1:hover{
+    overflow: visible; 
+    white-space: normal; 
+    position: relative;
+}
+
+.user h2{
+    color:lightgreen;
+}
+
+.user-button{
+    margin-top: 5px;
+    width: 50%;
+    text-decoration: none;
+    text-align: center;
+    background-color: $btn-color;
+    color: $form-background;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    height: 2%;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.user-button:hover {
+    background-color: $btn-hover;
+}

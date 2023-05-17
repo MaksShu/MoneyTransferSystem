@@ -1,0 +1,84 @@
+@import '../../mixins.scss';
+
+@media (max-width: 330px) {
+    .register-container{
+        min-height: 78vh;
+        @include flex-column-start;
+    }
+    .reg-image{
+        margin: 0;
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+    .reg-image img{       
+        border-radius: 10px;
+    }
+    .form-reg{
+        width: 90%;
+        margin: 0;
+        padding: 10px;
+        margin-bottom: 30px;
+    }
+    .button{
+        padding: 0;
+        font-size: 12px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 720px) and (min-width: 330px) {
+    .register-container{
+        min-height: 78vh;
+        @include flex-column-start;
+    }
+    .reg-image{
+        margin: 0;
+        margin-top: 3%;
+        margin-bottom: 3%;
+    }
+    .reg-image img{       
+        border-radius: 10px;
+    }
+    .form-reg{
+        width: 90%;
+        margin: 0;
+        margin-bottom: 30px;
+    }
+    .button{
+        font-size: 12px;
+        font-weight: normal;
+        width: 47%;
+    }
+}
+
+@media (min-height: 1200px) {
+    .form-reg{
+        margin: 0;
+        margin-bottom: 30px;
+    }
+}
+
+@media (min-width: 2040px) {
+    .reg-image img{
+        margin: 50px;
+    }
+    .form-reg{
+        min-height: 200px;
+        height: 200%;
+    }
+    .form-reg h2{
+        font-size: 400%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    .label-r{
+        font-size: 150%;
+    }
+    .input-r{
+        height: 40px;
+    }
+    .button{
+        font-size: 200%;
+    }
+}

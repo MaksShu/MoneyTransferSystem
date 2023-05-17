@@ -1,0 +1,33 @@
+@mixin flex-items-center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+@mixin flex-column-start{
+    @include flex-column;
+    justify-content: flex-start;
+}
+
+@mixin container{
+    @include flex-items-center;
+    height: fit-content;
+    padding: 1px;
+    min-height: 80vh;
+    margin: 0;
+    justify-content: center;
+}
+
+$border-color:#ccc;
+$form-background: #fff;
+$btn-color: #f89c07;
+$btn-hover: #d38507;
+$green-background: #105c03;
+$red-text: #e3390a;
+$orage: #dc6e00;
+$orange-hover: #dc6e00b5;

@@ -1,0 +1,26 @@
+@import '../../mixins.scss';
+
+.wallets-container{
+    @include container;
+    background: url(../../images/wallets_background.svg);
+    flex-wrap: wrap;
+    background-position: center;
+    background-size: cover;
+}
+
+.add-button-div{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    width: 30%;
+}
+
+.add-button{
+    width: 30%;
+    filter: saturate(3);
+    cursor: pointer;
+}
+
+.add-button:hover{
+    filter: saturate(1);
+}

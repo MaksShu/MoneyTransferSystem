@@ -1,0 +1,18 @@
+@media (max-width: 330px){
+    .footer{
+        font-size: 60%;
+    }
+}
+
+@media (min-width: 1500px) and (max-width: 2040px){
+    .footer{
+        font-size: 130%;
+    }
+}
+
+@media (min-width: 2040px) {
+    .footer{
+        font-size: 130%;
+        min-height: 42px;
+    }
+}

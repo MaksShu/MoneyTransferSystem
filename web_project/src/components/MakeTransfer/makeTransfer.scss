@@ -1,0 +1,45 @@
+@import '../../mixins.scss';
+
+.maketransfer-container{
+    @include container;
+    background: url(../../images/wallets_background.svg);
+    flex-wrap: wrap;
+    background-position: center;
+    background-size: cover;
+}
+
+.form-transfer{
+    width: 40%;
+    margin: 5%;
+    min-height: 380px;
+    max-height: 100%;   
+    padding: 20px;
+    border-radius: 15px;
+    background-color: $form-background;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-transfer h2 {
+    text-align: center;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.form {
+    @include flex-column;  
+}
+
+.label-t {
+    color: black;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.input-t {
+    height: 30px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid $border-color;
+}

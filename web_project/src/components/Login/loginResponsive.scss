@@ -1,0 +1,105 @@
+@import '../../mixins.scss';
+
+@media (max-width: 330px) {
+    .login-container{
+        min-height: 78vh;
+        @include flex-column-start;
+    }
+    .form-container{
+        width: 90%;
+        margin: 0;
+        padding: 10px;
+        margin-bottom: 30px;
+    }
+    .image-container{
+        width: 70%;
+    }
+    .button{
+        padding: 0;
+        font-size: 12px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+    .button-container a{
+        font-size: 50%;
+        padding: 5px 10px;
+    }
+    .button-container button{
+        font-size: 50%;
+        padding: 5px 12px;
+    }
+    .login-img{
+        min-width: 50px;
+    }
+}
+
+@media (max-width: 720px) and (min-width: 330px) {
+    .login-container{
+        min-height: 78vh;
+        @include flex-column-start;
+    }
+    .form-container{
+        width: 90%;
+        margin: 0;
+        margin-bottom: 30px;
+    }
+    .image-container{
+        width: 70%;
+    }
+    .button{
+        font-size: 12px;
+        font-weight: normal;
+        width: 47%;
+    }
+    .login-img{
+        min-width: 50px;
+    }
+}
+
+@media (min-width: 1500px) and (max-width: 2040px){
+    .login-container{
+        max-height: 70vh;        
+    }
+}
+
+@media (min-width: 2040px) {
+    .form-container{
+        min-height: 200px;
+        height: 200%;
+    }
+    .form-container h2{
+        font-size: 400%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    .label{
+        font-size: 300%;
+    }
+    .pass{
+        margin-bottom: 5%;
+    }
+    .button{
+        font-size: 200%;
+    }
+    .input{
+        height: 40px;
+    }
+    .login-img {
+        min-width: 90%;
+        width: 90%;
+        max-width: 65vh;
+    }
+}
+
+@media (min-height: 1200px) {
+    .login-container{
+        @include flex-column-start;
+    }
+    .form-container{
+        margin: 0;
+        margin-bottom: 30px;
+    }
+    .login-container{
+        justify-content: center;
+    }
+}

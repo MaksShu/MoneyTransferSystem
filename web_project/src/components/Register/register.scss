@@ -1,0 +1,88 @@
+@import '../../mixins.scss';
+
+.register-container{
+    @include container;
+
+    background: url(../../images/register_background.svg);
+    background-position: center;
+    background-size: cover;
+
+    min-height: 80vh;
+
+    padding: 0;
+
+    height: fit-content;
+    justify-content: center;
+    color: white;
+}
+
+.reg-image{
+    width: 30%;
+    margin-right: 10%;
+}
+
+.reg-image img{
+    border-radius: 30px;
+    width: 100%;   
+}
+
+.form-reg {
+    width: 40%;
+    min-height: 380px;
+    max-height: 100%;
+    margin: 5%;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: $form-background;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-reg h2 {
+    font-size: 100%;
+    text-align: center;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.form {
+    @include flex-column;  
+}
+
+.label-r {
+    color: black;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.input-r {
+    height: 25px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid $border-color;
+}
+
+.reg-button-container {
+    @include flex-items-center;
+    justify-content: space-between;
+}
+
+.button {
+    text-decoration: none;
+    text-align: center;
+    background-color: $btn-color;
+    color: $form-background;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    width: 45%;
+    height: 2%;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: $btn-hover;
+}

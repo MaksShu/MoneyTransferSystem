@@ -1,0 +1,29 @@
+@import '../../mixins.scss';
+
+@media (max-width: 402px) {
+    .transfer{
+        width: 80%;
+    }
+
+    .transfer h2{
+        font-size: 4vw;
+    }
+}
+
+@media (max-width: 720px) and (min-width: 402px) {
+    .transfer{
+        width: 45%;
+    }
+
+    .transfer h2{
+        font-size: 2.3vw;
+    }
+}
+
+@media (min-width: 1500px) and (max-width: 2040px){
+
+}
+
+@media (min-width: 2040px) {
+
+}
