@@ -8,11 +8,11 @@ import axios from 'axios'
 const baseURL = "http://localhost:5000/user";
 
 export default function Change() {
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
-    const [name, setName] = useState();
-    const [surname, setSurname] = useState();
-    const [id, setId] = useState();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [name, setName] = useState('');
+    const [surname, setSurname] = useState('');
+    const [id, setId] = useState('');
 
     const navigate = useNavigate();
 
@@ -73,13 +73,13 @@ export default function Change() {
                 <h2>Change User</h2>
                 <form className="form" id="form" onSubmit={submit}>
                     <label className="label-c" htmlFor="email">Email:</label>
-                    <input className="input-c" type="email" id="email" name="email" value={email} required onChange={e => setEmail(e.target.value)} />
+                    <input className="input-c" type="email" id="email" name="emailinp" value={email} required onChange={e => setEmail(e.target.value)} />
                     <label className="label-c" htmlFor="password">Password:</label>
-                    <input className="input-c" type="password" id="password" name="password" value={password} minLength="8" onChange={e => setPassword(e.target.value)} />
+                    <input className="input-c" type="password" id="password" name="passwordinp" value={password} minLength="8" onChange={e => setPassword(e.target.value)} />
                     <label className="label-c" htmlFor="surname">Surname:</label>
-                    <input className="input-c" type="text" id="surname" name="surname" value={surname} required onChange={e => setSurname(e.target.value)} />
+                    <input className="input-c" type="text" id="surname" name="surnameinp" value={surname} required onChange={e => setSurname(e.target.value)} />
                     <label className="label-c" htmlFor="name">Name:</label>
-                    <input className="input-c" type="text" id="name" name="name" value={name} required onChange={e => setName(e.target.value)} />
+                    <input className="input-c" type="text" id="name" name="nameinp" value={name} required onChange={e => setName(e.target.value)} />
                     <div className="change-button-container">
                         <Link className="cancel-button" to="../">Cancel</Link>
                         <input id="button" className="cancel-button" type="submit" value="Submit" />

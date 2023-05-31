@@ -8,11 +8,13 @@ import Wallets from './components/Wallets/Wallets'
 import Login from './components/Login/Login'
 import Register from './components/Register/Register'
 import Change from './components/Change/Change'
+import Chat from './components/Chat/Chat'
 import { Route, Routes } from 'react-router-dom';
 import './style.scss';
 import Transfers from './components/Transfers/Transfers';
 import MakeTransfer from './components/MakeTransfer/MakeTransfer';
 import Deposit from './components/Deposit/Deposit';
+import PageNotFound from './components/PageNotFound/PageNotFound';
 
 
 function App() {
@@ -29,6 +31,8 @@ function App() {
         <Route path="/transfers" element={<Transfers />} />
         <Route path="/make-transfer" element={<MakeTransfer />} />
         <Route path="/deposit" element={<Deposit />} />
+        <Route path="/chat" element={<Chat />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
     </div>

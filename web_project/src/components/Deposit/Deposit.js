@@ -39,7 +39,7 @@ export default function Deposit() {
             alert('Success!');
             navigate("../wallets");
         }).catch((response) => {
-            console.log(response);
+            // console.log(response);
             alert(response.response.data.error.message);
         });
     }
@@ -51,8 +51,8 @@ export default function Deposit() {
                 <form className="form" id="form" onSubmit={submit}>
                     <label className="label-t">Wallet:</label>
                     <input className="input-t" value={id} readOnly />
-                    <label className="label-t">Amount:</label>
-                    <input className="input-t" type="number" required onChange={e => setAmount(e.target.value)} />
+                    <label className="label-t" htmlFor='amount'>Amount:</label>
+                    <input className="input-t" type="number" name='amount' id='amount' required onChange={e => setAmount(e.target.value)} />
                     <div className="transfer-button-container change-button-container">
                         <Link className="cancel-button" to="../wallets">Cancel</Link>
                         <input id="button" className="cancel-button" type="submit" value="Submit" />

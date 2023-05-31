@@ -23,10 +23,10 @@ export default function Wallets() {
                 Authorization: `Bearer ${token}`
             }
         }).then((response) => {
-            alert('Success!');
-            window.location.reload(false);
+            alert(response.data.message);
+            setReload(true);
         }).catch((response) => {
-            console.log(response);
+            //console.log(response);
             alert(response.response.error.message);
         });
     }
@@ -34,7 +34,7 @@ export default function Wallets() {
     return (
         <div className="wallets-container">
             <GetWallets />
-            <div className='add-button-div'>
+            <div className='add-button-div' name={reload}>
                 <img onClick={create_wallet} className='add-button' src={add} alt='add button'></img>
             </div>
         </div>

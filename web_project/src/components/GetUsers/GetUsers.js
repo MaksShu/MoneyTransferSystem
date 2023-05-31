@@ -37,7 +37,7 @@ export default function GetUsers() {
         return <div>Error: {post.response.data.msg}</div>;
     } else {
         return <>{post.data.Users.map(item => (
-            <div className="user" key={item.id}>
+            <div className="user" role='listitem' key={item.id}>
                 <h1>{item.email}</h1>
                 <h2>User</h2>
                 {/* <a className="user-button">Wallets</a> */}

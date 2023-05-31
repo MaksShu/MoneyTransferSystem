@@ -39,7 +39,7 @@ export default function GetWallets() {
         if (window.confirm("Do you really want to delete a wallet?")) {
             const token = sessionStorage.getItem('JWT');
 
-            console.log(e);
+            // console.log(e);
 
             const id = e.target.accessKey;
 
@@ -83,16 +83,16 @@ export default function GetWallets() {
         return <div>Error: {post.response.data.msg}</div>;
     } else {
         return <>{post.data.Wallets.map(item => (
-            <div className="wallet" key={item.id}>
+            <div className="wallet" role='listitem' key={item.id}>
                 <div className="block">
                     <h2>#{item.id}</h2>
-                    <img onClick={go_to_transfers} src={transfer} accessKey={item.id} className="round-button"></img>
-                    <img onClick={delete_wallet} accessKey={item.id} src={del} className="delete-button"></img>
+                    <img onClick={go_to_transfers} role='transfers' src={transfer} accessKey={item.id} className="round-button"></img>
+                    <img onClick={delete_wallet} role='delete' accessKey={item.id} src={del} className="delete-button"></img>
                 </div>
                 <div className="block">
                     <h1>${item.funds}</h1><button onClick={go_to_deposit} accessKey={item.id} className="deposit-button">Deposit</button>
                 </div>
-                <a className="transfer-button" onClick={go_to_maketransfer} accessKey={item.id}>Make transfer</a>
+                <a className="transfer-button" alt='transfer button' onClick={go_to_maketransfer} accessKey={item.id}>Make transfer</a>
             </div>
         ))}</>
     }

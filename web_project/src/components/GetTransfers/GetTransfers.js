@@ -17,19 +17,21 @@ export default function GetTransfers() {
             navigate("../");
         }
 
-        axios.get(baseURL+id+'/transfers', {
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-                'Content-Type': 'application/json',
-                Authorization: `Bearer ${token}`
-            }
-        }).then((response) => {
-            console.log(response);
-            setPost(response);
-        }).catch((response) => {
-            console.log(response);
-            setPost(response);
-        });
+        if(id != null){
+            axios.get(baseURL+id+'/transfers', {
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${token}`
+                }
+            }).then((response) => {
+                // console.log(response);
+                setPost(response);
+            }).catch((response) => {
+                // console.log(response);
+                setPost(response);
+            });
+        }
     }, []);
 
     if (id==null){
@@ -44,7 +46,7 @@ export default function GetTransfers() {
             return <div>No transfers found</div>;
         }else{
             return <>{post.data.Transfers.map(item => (
-                <div className="transfer" key={item.id}>
+                <div className="transfer" role='listitem' key={item.id}>
                     <div className="transfer-block">
                         <h2><c className='heading'>From:</c> <h3>#{item.from_wallet_id}</h3></h2>
                         <h2><c className='heading'>To:</c> <h3>#{item.to_wallet_id}</h3></h2>

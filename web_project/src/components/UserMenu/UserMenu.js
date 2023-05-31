@@ -41,6 +41,7 @@ export default function UserMenu() {
 
     return <>
         <li className="dropdown-menu-li"><Link to="../change">Change</Link></li>
+        <li className="dropdown-menu-li"><Link to="../chat">Chat</Link></li>
         <li className="dropdown-menu-li"><a id="logout-button" onClick={logout}>Log out</a></li>
         <li className="dropdown-menu-li"><a id="delete-button" onClick={deleteUser}>Delete</a></li>
     </>
