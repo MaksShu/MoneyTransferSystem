@@ -1,0 +1,9 @@
+@import '../../mixins.scss';
+
+.transfers-container{
+    @include container;
+    background: url(../../images/login_background.svg);
+    background-size: cover;
+    background-position: center;
+    flex-wrap: wrap;  
+}

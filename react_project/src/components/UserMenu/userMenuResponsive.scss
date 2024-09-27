@@ -1,0 +1,22 @@
+@media (max-width: 330px) {
+    .react-confirm-alert-body {
+        width: 70%;
+        margin-left: 16%;
+        font-size: 40%;
+    }
+    .react-confirm-alert-button-group button{
+        font-size: 120%;
+        padding: 6px 9px;
+    }
+}
+
+@media (max-width: 720px) and (min-width: 330px) {
+    .react-confirm-alert-body {
+        width: 70%;
+        margin-left: 16%;
+        font-size: 70%;
+    }
+    .react-confirm-alert-button-group button{
+        font-size: 100%;
+    }
+}
